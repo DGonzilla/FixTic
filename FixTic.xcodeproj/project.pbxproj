@@ -7,21 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C717152420FACA0600437390 /* StudentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C717152320FACA0500437390 /* StudentMainViewController.swift */; };
+		C717152620FAEC9E00437390 /* TechMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C717152520FAEC9E00437390 /* TechMainViewController.swift */; };
+		C717447820F8EAB400EA0F0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C717447720F8EAB400EA0F0A /* GoogleService-Info.plist */; };
+		C774C48320FF11F300F24C71 /* SubmitTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C774C48220FF11F200F24C71 /* SubmitTicketViewController.swift */; };
 		C793555D20F18A0E002D8FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793555C20F18A0E002D8FB2 /* AppDelegate.swift */; };
-		C793555F20F18A0E002D8FB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793555E20F18A0E002D8FB2 /* ViewController.swift */; };
+		C793555F20F18A0E002D8FB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793555E20F18A0E002D8FB2 /* LoginViewController.swift */; };
 		C793556220F18A0E002D8FB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C793556020F18A0E002D8FB2 /* Main.storyboard */; };
 		C793556420F18A16002D8FB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C793556320F18A16002D8FB2 /* Assets.xcassets */; };
 		C793556720F18A16002D8FB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C793556520F18A16002D8FB2 /* LaunchScreen.storyboard */; };
+		C7EEB67C20F2B2B9004AB85D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EEB67B20F2B2B9004AB85D /* SignUpViewController.swift */; };
+		E52B2477C622C365F5CC9B6D /* Pods_FixTic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6058C79396FDEE67BD56358 /* Pods_FixTic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031766C785A44D4E95462BB5 /* Pods-FixTic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixTic.release.xcconfig"; path = "Pods/Target Support Files/Pods-FixTic/Pods-FixTic.release.xcconfig"; sourceTree = "<group>"; };
+		3326D82805A370626B14B12F /* Pods-FixTic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixTic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FixTic/Pods-FixTic.debug.xcconfig"; sourceTree = "<group>"; };
+		B6058C79396FDEE67BD56358 /* Pods_FixTic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixTic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C717152320FACA0500437390 /* StudentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMainViewController.swift; sourceTree = "<group>"; };
+		C717152520FAEC9E00437390 /* TechMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechMainViewController.swift; sourceTree = "<group>"; };
+		C717447720F8EAB400EA0F0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C774C48220FF11F200F24C71 /* SubmitTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitTicketViewController.swift; sourceTree = "<group>"; };
 		C793555920F18A0E002D8FB2 /* FixTic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixTic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C793555C20F18A0E002D8FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C793555E20F18A0E002D8FB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C793555E20F18A0E002D8FB2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C793556120F18A0E002D8FB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C793556320F18A16002D8FB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C793556620F18A16002D8FB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C793556820F18A16002D8FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7EEB67B20F2B2B9004AB85D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52B2477C622C365F5CC9B6D /* Pods_FixTic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5870D2A279499B562F1358F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6058C79396FDEE67BD56358 /* Pods_FixTic.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88504A65CCD42790061E4716 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3326D82805A370626B14B12F /* Pods-FixTic.debug.xcconfig */,
+				031766C785A44D4E95462BB5 /* Pods-FixTic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C793555020F18A0E002D8FB2 = {
 			isa = PBXGroup;
 			children = (
 				C793555B20F18A0E002D8FB2 /* FixTic */,
 				C793555A20F18A0E002D8FB2 /* Products */,
+				88504A65CCD42790061E4716 /* Pods */,
+				5870D2A279499B562F1358F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +89,16 @@
 			isa = PBXGroup;
 			children = (
 				C793555C20F18A0E002D8FB2 /* AppDelegate.swift */,
-				C793555E20F18A0E002D8FB2 /* ViewController.swift */,
+				C793555E20F18A0E002D8FB2 /* LoginViewController.swift */,
+				C7EEB67B20F2B2B9004AB85D /* SignUpViewController.swift */,
+				C717152320FACA0500437390 /* StudentMainViewController.swift */,
+				C774C48220FF11F200F24C71 /* SubmitTicketViewController.swift */,
+				C717152520FAEC9E00437390 /* TechMainViewController.swift */,
 				C793556020F18A0E002D8FB2 /* Main.storyboard */,
 				C793556320F18A16002D8FB2 /* Assets.xcassets */,
 				C793556520F18A16002D8FB2 /* LaunchScreen.storyboard */,
 				C793556820F18A16002D8FB2 /* Info.plist */,
+				C717447720F8EAB400EA0F0A /* GoogleService-Info.plist */,
 			);
 			path = FixTic;
 			sourceTree = "<group>";
@@ -71,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C793556B20F18A16002D8FB2 /* Build configuration list for PBXNativeTarget "FixTic" */;
 			buildPhases = (
+				00599DDF7C4AD3FC1F82AA69 /* [CP] Check Pods Manifest.lock */,
 				C793555520F18A0E002D8FB2 /* Sources */,
 				C793555620F18A0E002D8FB2 /* Frameworks */,
 				C793555720F18A0E002D8FB2 /* Resources */,
+				F3951206106F71F295BD312C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +137,7 @@
 				TargetAttributes = {
 					C793555820F18A0E002D8FB2 = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -123,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C793556720F18A16002D8FB2 /* LaunchScreen.storyboard in Resources */,
+				C717447820F8EAB400EA0F0A /* GoogleService-Info.plist in Resources */,
 				C793556420F18A16002D8FB2 /* Assets.xcassets in Resources */,
 				C793556220F18A0E002D8FB2 /* Main.storyboard in Resources */,
 			);
@@ -130,13 +173,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00599DDF7C4AD3FC1F82AA69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FixTic-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3951206106F71F295BD312C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FixTic/Pods-FixTic-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FixTic/Pods-FixTic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C793555520F18A0E002D8FB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C793555F20F18A0E002D8FB2 /* ViewController.swift in Sources */,
+				C774C48320FF11F300F24C71 /* SubmitTicketViewController.swift in Sources */,
+				C7EEB67C20F2B2B9004AB85D /* SignUpViewController.swift in Sources */,
+				C717152420FACA0600437390 /* StudentMainViewController.swift in Sources */,
+				C793555F20F18A0E002D8FB2 /* LoginViewController.swift in Sources */,
 				C793555D20F18A0E002D8FB2 /* AppDelegate.swift in Sources */,
+				C717152620FAEC9E00437390 /* TechMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -267,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -278,6 +382,7 @@
 		};
 		C793556C20F18A16002D8FB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3326D82805A370626B14B12F /* Pods-FixTic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -289,13 +394,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Gonzalez.FixTic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C793556D20F18A16002D8FB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 031766C785A44D4E95462BB5 /* Pods-FixTic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -307,8 +413,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Gonzalez.FixTic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,12 +1,9 @@
-//
-//  AppDelegate.swift
-//  FixTic
-//
-//  Created by David Adrien Gonzalez on 7/7/18.
-//  Copyright © 2018 David Adrien Gonzalez. All rights reserved.
-//
-
 import UIKit
+import Firebase
+import FirebaseFirestore
+
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +11,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+        
+        
         return true
     }
 
