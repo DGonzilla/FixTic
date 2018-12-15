@@ -34,7 +34,7 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
         
     
         // Declarations for studentTicketNotes variables
-        studentTicketNotes.text = "Hello, I’m currently locked out (enter application name). Please assist in unlocking my account..."
+        studentTicketNotes.text = "Hello, I’m currently locked out (application name). Please assist in unlocking my account..."
         studentTicketNotes.textColor = .lightGray
         
         studentTicketCategory.textAlignment = .center
@@ -155,7 +155,7 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
         
         
         // Placeholder for studentTicketNotes
-        if (studentTicketNotes.text == "Hello, I’m currently locked out (application name). Please assist in unlocking my account.."
+        if (studentTicketNotes.text == "Hello, I’m currently locked out (application name). Please assist in unlocking my account..."
             && studentTicketNotes.textColor == .lightGray)
         {
             studentTicketNotes.text = ""
@@ -177,7 +177,7 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
         // Placeholder for studentTicketNotes when nothing within textfield
         if (studentTicketNotes.text == ""){
             
-            studentTicketNotes.text = "Hello, I’m currently locked out (application name). Please assist in unlocking my account.."
+            studentTicketNotes.text = "Hello, I’m currently locked out (application name). Please assist in unlocking my account..."
             studentTicketNotes.textColor = .lightGray
         }
         
