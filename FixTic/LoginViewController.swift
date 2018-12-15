@@ -87,17 +87,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,10 +95,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         self.userEmailField.delegate = self
         self.userPasswordField.delegate = self
+        
+    
+        
     }
-    
-    
-    
     
     
     
@@ -119,6 +108,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    /////////////////   Keyboard Functions ////////////////////////
     
     
     //*** Hides keyboard when user touches outside keyboard
@@ -134,9 +126,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    // Raises view when keyboard is called
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.frame = CGRect(x:self.view.frame.origin.x, y:self.view.frame.origin.y - 225, width:self.view.frame.size.width, height:self.view.frame.size.height);
+        })
+    }
+
+    
+    // Lowers view when finished using keyboard
+    func textFieldDidEndEditing(_ textField: UITextField,
+                                reason: UITextField.DidEndEditingReason){
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.frame = CGRect(x:self.view.frame.origin.x, y:self.view.frame.origin.y + 225, width:self.view.frame.size.width, height:self.view.frame.size.height);        })
+    }
+    
+    
+    /////////////////   Keyboard Functions Ending ////////////////////////
+
+    
+    
+    
+    
+    
     
     
     
 }
-
-

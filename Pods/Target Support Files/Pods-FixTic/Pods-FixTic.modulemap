@@ -1,0 +1,6 @@
+framework module Pods_FixTic {
+  umbrella header "Pods-FixTic-umbrella.h"
+
+  export *
+  module * { export * }
+}
