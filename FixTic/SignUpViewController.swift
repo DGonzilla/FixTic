@@ -53,6 +53,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
                     self.login()
                     
                     
+                    
+                    
                     //*** Creates database Document
                     // Declares database
                     let db = Firestore.firestore()
@@ -67,6 +69,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
                                                        "Account Type" : self.userTypeField.text!]
                     // Writes info to database
                     db.collection("users").document(self.userEmailField.text!).setData(dictionary)
+                    
+                    
+                    
                     
                     
                     
@@ -192,14 +197,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     //*** Prepares information to provide to StudentMainViewController or TechMainViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "StudentMainViewSegue") {
-            let studentMainViewController = segue.destination as! StudentMainViewController
             
-            studentMainViewController.firstName = userFirstNameField.text!
+            let studentMainViewController = segue.destination as! StudentMainViewController
+            studentMainViewController.userFirstName = userFirstNameField.text!
+            studentMainViewController.userLastName = userLastNameField.text!
+            studentMainViewController.userEmail = userEmailField.text!
+            studentMainViewController.userType = userTypeField.text!
+            
         }
         else if (segue.identifier == "TechMainViewSegue") {
-            let techMainViewController = segue.destination as! TechMainViewController
             
-            techMainViewController.firstName = userFirstNameField.text!
+            let techMainViewController = segue.destination as! TechMainViewController
+            techMainViewController.userFirstName = userFirstNameField.text!
         }
     }
     
@@ -210,6 +219,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     /////////////////   Keyboard Functions ////////////////////////
@@ -250,7 +267,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     }
     
     /////////////////   Keyboard Functions Ending ////////////////////////
-
+    
 }
 
 

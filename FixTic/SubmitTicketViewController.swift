@@ -13,7 +13,44 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
         
         
         
+        
+//        //*** Creates database Document
+//        // Declares database
+//        let db = Firestore.firestore()
+//        let settings = db.settings
+//        settings.areTimestampsInSnapshotsEnabled = true
+//        db.settings = settings
+
+        
+        
+        
+        
+        
+        
+        
+        
+//        
+//        let db = Firestore.firestore()
+//        db.collection("fix_tickets").whereField(<#T##field: String##String#>, isEqualTo: <#T##Any#>)
+//        
+//        
+//        let dictionary : [String : Any] = ["Student Username" : self.userEmailField.text!,
+//                                           "Category" : self.studentTicketCategory.text!,
+//                                           "Description" : self.studentTicketNotes.text!,
+//                                           "Date Submitted" : self.userEmailField.text!,
+//                                           "Ticket Status" : "Open"]
+//        // Writes info to database
+//        db.collection("fix_tickets").document(self.userEmailField.text!).setData(dictionary)
+//        
+//        
+        
+        
     }
+    
+    
+    // testing email variable
+    var userEmailField: String = "test@test.com"
+    
     
     
     
@@ -27,19 +64,16 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-
+        
         self.studentTicketCategory.delegate = self
         self.studentTicketNotes.delegate = self
         
-    
-        // Declarations for studentTicketNotes variables
+        
+        // Changes to studentTicketNotes TextView
         studentTicketNotes.text = "Hello, I’m currently locked out (application name). Please assist in unlocking my account..."
         studentTicketNotes.textColor = .lightGray
-        
         studentTicketCategory.textAlignment = .center
 
-        
         
         // Used for UIPicker
         createUserTypePicker()
@@ -49,6 +83,18 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
         
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -79,8 +125,8 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
         view.endEditing(true)
     }
 
-
-
+    
+    
 
     //*** Functions for PickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -99,6 +145,20 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
     }
 
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

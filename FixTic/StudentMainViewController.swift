@@ -13,7 +13,7 @@ import FirebaseFirestore
 class StudentMainViewController: UIViewController {
     
     // Wiring for objects
-    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var userFirstNameLabel: UILabel!
     
     @IBAction func checkStatusButton(_ sender: UIButton) {
     }
@@ -22,14 +22,16 @@ class StudentMainViewController: UIViewController {
     }
     
     
-    var firstName = String()
-    
+    var userFirstName = ""
+    var userEmail = ""
+    var userLastName = ""
+    var userType = ""
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        firstNameLabel.text = firstName
+        userFirstNameLabel.text = userFirstName
     }
     
 

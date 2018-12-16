@@ -15,21 +15,21 @@ class TechMainViewController: UIViewController {
     
     
     // Wires all view objects
-    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var userFirstNameLabel: UILabel!
     @IBAction func runReportButton(_ sender: UIButton) {
     }
     @IBAction func viewTicketsButton(_ sender: UIButton) {
     }
     
     
-    var firstName = String()
+    var userFirstName = ""
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        firstNameLabel.text = firstName
+        userFirstNameLabel.text = userFirstName
     }
     
 

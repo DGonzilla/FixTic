@@ -51,13 +51,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 db.collection("users").document(self.userEmailField.text!).getDocument { (document, error) in
                     if let document = document, document.exists {
                         _ = document.data().map(String.init(describing:)) ?? "nil"
+                        
+                        // Queries account type
                         let account: String = document.data()!["Account Type"] as! String
-                        
-                        
                         
                         
                         //*** Determines whether User is Student or Technician... Segues accordingly
                         if (account == "Student"){
+                            
                             self.performSegue(withIdentifier: "LoginStudentMainViewSegue", sender: self)
                             
                         }
@@ -110,6 +111,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    // Sends StudentMainViewController the user's email address
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let studentMainViewController = segue.destination as! StudentMainViewController
+        studentMainViewController.userEmail = userEmailField.text!
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /////////////////   Keyboard Functions ////////////////////////
     
     
@@ -146,12 +167,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     /////////////////   Keyboard Functions Ending ////////////////////////
 
-    
-    
-    
-    
-    
-    
     
     
 }
