@@ -111,12 +111,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    
     // Sends StudentMainViewController the user's email address
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let studentMainViewController = segue.destination as! StudentMainViewController
-        studentMainViewController.userEmail = userEmailField.text!
+        if segue.identifier == "LoginStudentMainViewSegue" {
+            
+            let studentMainViewController = segue.destination as! StudentMainViewController
+            studentMainViewController.userEmail = userEmailField.text!
+        }
+
     }
+    
     
     
     
