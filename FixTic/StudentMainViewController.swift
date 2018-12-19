@@ -27,14 +27,42 @@ class StudentMainViewController: UIViewController {
     var userLastName = ""
     var userType = ""
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        userFirstNameLabel.text = userFirstName
+        
+        fetchUserInfo()
     }
     
-
     
-
+    // Function that will fetch data on user whose email was used to log in
+    func fetchUserInfo(){
+        
+        let db = Firestore.firestore()
+        db.collection("users").whereField("Email", isEqualTo: userEmail).getDocuments {
+            (snapshot, error) in if error != nil {
+                
+                print(error!)
+            } else {
+                
+                for document in (snapshot?.documents)! {
+                    
+                    if let userFirstName = document.data()["First Name"] as? String{
+                        
+                        self.userFirstNameLabel.text = userFirstName
+                        print(userFirstName)
+                    }
+                    
+                }
+            }
+            
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
 }
