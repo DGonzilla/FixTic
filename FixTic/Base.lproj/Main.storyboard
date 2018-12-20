@@ -1350,9 +1350,10 @@ Try again</string>
         <image name="Ticket Status" width="414" height="736"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="37s-ue-bgC"/>
         <segue reference="2Md-NV-kED"/>
         <segue reference="73X-WS-177"/>
-        <segue reference="rby-hR-6F9"/>
+        <segue reference="QZx-p8-5sq"/>
         <segue reference="f5V-rC-0tB"/>
         <segue reference="j2O-wB-Dfs"/>
     </inferredMetricsTieBreakers>

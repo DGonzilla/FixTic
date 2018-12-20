@@ -14,42 +14,15 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
         
         
         
-//        //*** Creates database Document
-//        // Declares database
-//        let db = Firestore.firestore()
-//        let settings = db.settings
-//        settings.areTimestampsInSnapshotsEnabled = true
-//        db.settings = settings
-
-        
-        
-        
-        
-        
-        
-        
-        
-//        
-//        let db = Firestore.firestore()
-//        db.collection("fix_tickets").whereField(<#T##field: String##String#>, isEqualTo: <#T##Any#>)
-//        
-//        
-//        let dictionary : [String : Any] = ["Student Username" : self.userEmailField.text!,
-//                                           "Category" : self.studentTicketCategory.text!,
-//                                           "Description" : self.studentTicketNotes.text!,
-//                                           "Date Submitted" : self.userEmailField.text!,
-//                                           "Ticket Status" : "Open"]
-//        // Writes info to database
-//        db.collection("fix_tickets").document(self.userEmailField.text!).setData(dictionary)
-//        
-//        
-        
         
     }
     
     
-    // testing email variable
-    var userEmailField: String = "test@test.com"
+    // Declares variables to be used
+    var userEmail = ""
+    var userFirstName = ""
+    var userLastName = ""
+    var userType = ""
     
     
     
@@ -78,6 +51,9 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
         // Used for UIPicker
         createUserTypePicker()
         createToolBar()
+        
+        
+        print("Submit Ticket loaded: ", userFirstName, userLastName, userType, userEmail)
 
 
         

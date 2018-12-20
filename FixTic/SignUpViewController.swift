@@ -49,7 +49,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
                 else{
                     
                     //*** Everything went smoothly
-                    print("User created :)")
+                    print("User created successfully :)")
                     self.login()
                     
                     

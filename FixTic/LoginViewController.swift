@@ -34,7 +34,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.performSegue(withIdentifier: "SignInErrorViewSegue", sender: self)
             }
             else{
-                print("It Worked!")
+                print("User logged in successfully! :)")
                 
                 
                 
