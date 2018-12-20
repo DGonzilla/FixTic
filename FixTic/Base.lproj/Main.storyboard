@@ -568,7 +568,7 @@ Try again</string>
                                 </state>
                                 <connections>
                                     <action selector="submitFixTicButton:" destination="fnh-d8-NsB" eventType="touchUpInside" id="K1D-Ks-7Za"/>
-                                    <segue destination="ETQ-Qc-Svp" kind="showDetail" id="37s-ue-bgC"/>
+                                    <segue destination="ETQ-Qc-Svp" kind="showDetail" identifier="StudentSubmitTicketViewSegue" id="37s-ue-bgC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CxZ-IO-nYE">
@@ -592,7 +592,7 @@ Try again</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d1-pL-Rg9">
                                 <rect key="frame" x="108" y="159" width="196" height="48"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="First Name">
+                                    <fragment content="     ">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <font key="NSFont" size="40" name="HelveticaNeue-Thin"/>
@@ -1352,7 +1352,7 @@ Try again</string>
     <inferredMetricsTieBreakers>
         <segue reference="2Md-NV-kED"/>
         <segue reference="73X-WS-177"/>
-        <segue reference="QZx-p8-5sq"/>
+        <segue reference="rby-hR-6F9"/>
         <segue reference="f5V-rC-0tB"/>
         <segue reference="j2O-wB-Dfs"/>
     </inferredMetricsTieBreakers>
