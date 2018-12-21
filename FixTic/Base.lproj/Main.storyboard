@@ -643,7 +643,8 @@ Try again</string>
                                 <rect key="frame" x="38" y="45" width="30" height="19"/>
                                 <state key="normal" image="Arrow"/>
                                 <connections>
-                                    <segue destination="fnh-d8-NsB" kind="showDetail" id="QZx-p8-5sq"/>
+                                    <action selector="returnToStudentMainView:" destination="ETQ-Qc-Svp" eventType="touchUpInside" id="iIf-Gl-OU5"/>
+                                    <segue destination="fnh-d8-NsB" kind="showDetail" identifier="ReturnToStudentMenuView" id="QZx-p8-5sq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hT-d0-3ck">
@@ -1350,7 +1351,6 @@ Try again</string>
         <image name="Ticket Status" width="414" height="736"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="37s-ue-bgC"/>
         <segue reference="2Md-NV-kED"/>
         <segue reference="73X-WS-177"/>
         <segue reference="QZx-p8-5sq"/>
