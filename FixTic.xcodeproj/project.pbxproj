@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C717152420FACA0600437390 /* StudentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C717152320FACA0500437390 /* StudentMainViewController.swift */; };
 		C717152620FAEC9E00437390 /* TechMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C717152520FAEC9E00437390 /* TechMainViewController.swift */; };
+		C72B413D21CF28C10081410E /* StudentConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B413C21CF28C10081410E /* StudentConfirmationViewController.swift */; };
+		C72B413F21CF32010081410E /* StudentFixTicErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B413E21CF32010081410E /* StudentFixTicErrorViewController.swift */; };
 		C774C48320FF11F300F24C71 /* SubmitTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C774C48220FF11F200F24C71 /* SubmitTicketViewController.swift */; };
 		C793555D20F18A0E002D8FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793555C20F18A0E002D8FB2 /* AppDelegate.swift */; };
 		C793555F20F18A0E002D8FB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793555E20F18A0E002D8FB2 /* LoginViewController.swift */; };
@@ -26,6 +28,8 @@
 		B6058C79396FDEE67BD56358 /* Pods_FixTic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixTic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C717152320FACA0500437390 /* StudentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMainViewController.swift; sourceTree = "<group>"; };
 		C717152520FAEC9E00437390 /* TechMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechMainViewController.swift; sourceTree = "<group>"; };
+		C72B413C21CF28C10081410E /* StudentConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentConfirmationViewController.swift; sourceTree = "<group>"; };
+		C72B413E21CF32010081410E /* StudentFixTicErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFixTicErrorViewController.swift; sourceTree = "<group>"; };
 		C774C48220FF11F200F24C71 /* SubmitTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitTicketViewController.swift; sourceTree = "<group>"; };
 		C793555920F18A0E002D8FB2 /* FixTic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixTic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C793555C20F18A0E002D8FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				C7EEB67B20F2B2B9004AB85D /* SignUpViewController.swift */,
 				C717152320FACA0500437390 /* StudentMainViewController.swift */,
 				C774C48220FF11F200F24C71 /* SubmitTicketViewController.swift */,
+				C72B413C21CF28C10081410E /* StudentConfirmationViewController.swift */,
+				C72B413E21CF32010081410E /* StudentFixTicErrorViewController.swift */,
 				C717152520FAEC9E00437390 /* TechMainViewController.swift */,
 				C793556020F18A0E002D8FB2 /* Main.storyboard */,
 				C793556320F18A16002D8FB2 /* Assets.xcassets */,
@@ -236,8 +242,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C774C48320FF11F300F24C71 /* SubmitTicketViewController.swift in Sources */,
+				C72B413D21CF28C10081410E /* StudentConfirmationViewController.swift in Sources */,
 				C7EEB67C20F2B2B9004AB85D /* SignUpViewController.swift in Sources */,
 				C717152420FACA0600437390 /* StudentMainViewController.swift in Sources */,
+				C72B413F21CF32010081410E /* StudentFixTicErrorViewController.swift in Sources */,
 				C793555F20F18A0E002D8FB2 /* LoginViewController.swift in Sources */,
 				C793555D20F18A0E002D8FB2 /* AppDelegate.swift in Sources */,
 				C717152620FAEC9E00437390 /* TechMainViewController.swift in Sources */,

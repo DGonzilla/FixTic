@@ -474,7 +474,7 @@ Try again</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEK-iX-84f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1987" y="-1153"/>
+            <point key="canvasLocation" x="2368" y="-1523"/>
         </scene>
         <!--Sign In Error View Controller-->
         <scene sceneID="BVh-Se-QgZ">
@@ -631,7 +631,7 @@ Try again</string>
         <!--Submit Ticket View Controller-->
         <scene sceneID="rFb-ve-arO">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="ETQ-Qc-Svp" userLabel="Submit Ticket View Controller" customClass="SubmitTicketViewController" customModule="FixTic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubmitTicketViewController" modalTransitionStyle="crossDissolve" id="ETQ-Qc-Svp" userLabel="Submit Ticket View Controller" customClass="SubmitTicketViewController" customModule="FixTic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M26-Cj-MGc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -715,7 +715,7 @@ Try again</string>
                                 </state>
                                 <connections>
                                     <action selector="studentTicketSubmit:" destination="ETQ-Qc-Svp" eventType="touchUpInside" id="KkI-hm-ZBi"/>
-                                    <segue destination="yXO-CR-5xJ" kind="showDetail" id="UWh-zu-0SW"/>
+                                    <segue destination="yXO-CR-5xJ" kind="showDetail" identifier="StudentConfirmationViewSegue" id="KaS-qf-MN8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -753,16 +753,17 @@ Try again</string>
                     <connections>
                         <outlet property="studentTicketCategory" destination="rMH-62-9wn" id="kKb-yv-s1H"/>
                         <outlet property="studentTicketNotes" destination="Urw-fS-iZm" id="2rT-X5-Pn2"/>
+                        <segue destination="zhi-su-SJK" kind="showDetail" identifier="StudentSubmitTicketError" id="agw-TY-hjX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAp-bx-m6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4350.7246376811599" y="-223.36956521739131"/>
+            <point key="canvasLocation" x="4368" y="-203"/>
         </scene>
         <!--Submit Confirmation View Controller-->
         <scene sceneID="VVL-ay-kJ6">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="yXO-CR-5xJ" userLabel="Submit Confirmation View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentConfirmationViewController" modalTransitionStyle="crossDissolve" id="yXO-CR-5xJ" userLabel="Submit Confirmation View Controller" customClass="StudentConfirmationViewController" customModule="FixTic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2CK-OD-lbv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -785,7 +786,8 @@ Try again</string>
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="fnh-d8-NsB" kind="showDetail" id="4iz-fU-ec8"/>
+                                    <action selector="returnToStudentMainButton:" destination="yXO-CR-5xJ" eventType="touchUpInside" id="IDC-7E-Nfa"/>
+                                    <segue destination="fnh-d8-NsB" kind="showDetail" identifier="StudentTicketSubmittedReturnToStudentMainView" id="4iz-fU-ec8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -800,7 +802,7 @@ Try again</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdG-jf-jMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5987" y="-223"/>
+            <point key="canvasLocation" x="6486" y="38"/>
         </scene>
         <!--Tech Main View Controller-->
         <scene sceneID="EAs-VE-UfQ">
@@ -939,7 +941,7 @@ Try again</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2c-B2-Xg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4179.7101449275369" y="-1049.1847826086957"/>
+            <point key="canvasLocation" x="4630" y="-1282"/>
         </scene>
         <!--Tech Confirmation View Controller-->
         <scene sceneID="JtL-gj-jTk">
@@ -1331,7 +1333,73 @@ Try again</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lKk-MS-XNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5331.884057971015" y="-1049.1847826086957"/>
+            <point key="canvasLocation" x="6135" y="-1221"/>
+        </scene>
+        <!--Submit FixTic Error View Controller Scene-->
+        <scene sceneID="A5X-K4-ZxU">
+            <objects>
+                <viewController storyboardIdentifier="StudentFixTicErrorViewController" modalTransitionStyle="crossDissolve" id="zhi-su-SJK" userLabel="Submit FixTic Error View Controller Scene" customClass="StudentFixTicErrorViewController" customModule="FixTic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U6E-Cr-sn3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Image" translatesAutoresizingMaskIntoConstraints="NO" id="eWo-YI-3nz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heX-hw-fXY">
+                                <rect key="frame" x="29" y="288" width="356" height="160"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Oops,
+something went wrong
+
+Try again</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="30" name="SFProDisplay-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twL-5L-88x">
+                                <rect key="frame" x="30" y="508" width="352" height="45"/>
+                                <state key="normal" backgroundImage="Rectangle">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Got it">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="18" name="SFProDisplay-Light"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="ETQ-Qc-Svp" kind="showDetail" identifier="ReturnBackToSubmitTicketFromErrorView" id="JuQ-a4-mo2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="twL-5L-88x" firstAttribute="leading" secondItem="vzH-4J-xC6" secondAttribute="leading" constant="30" id="2fL-fi-r4b"/>
+                            <constraint firstItem="heX-hw-fXY" firstAttribute="centerY" secondItem="eWo-YI-3nz" secondAttribute="centerY" id="HsB-aw-u9R"/>
+                            <constraint firstItem="heX-hw-fXY" firstAttribute="centerX" secondItem="U6E-Cr-sn3" secondAttribute="centerX" id="PKn-lz-CYZ"/>
+                            <constraint firstItem="heX-hw-fXY" firstAttribute="top" secondItem="vzH-4J-xC6" secondAttribute="top" constant="268" id="PjA-B0-wfL"/>
+                            <constraint firstItem="heX-hw-fXY" firstAttribute="centerX" secondItem="eWo-YI-3nz" secondAttribute="centerX" id="RDT-Bw-nQJ"/>
+                            <constraint firstItem="vzH-4J-xC6" firstAttribute="trailing" secondItem="twL-5L-88x" secondAttribute="trailing" constant="32" id="Raq-v2-cMg"/>
+                            <constraint firstItem="heX-hw-fXY" firstAttribute="leading" secondItem="vzH-4J-xC6" secondAttribute="leading" constant="29" id="dZy-em-rPW"/>
+                            <constraint firstItem="twL-5L-88x" firstAttribute="top" secondItem="heX-hw-fXY" secondAttribute="bottom" constant="60" id="irq-Sj-vhB"/>
+                            <constraint firstItem="vzH-4J-xC6" firstAttribute="bottom" secondItem="twL-5L-88x" secondAttribute="bottom" constant="183" id="q0W-53-0SO"/>
+                            <constraint firstItem="heX-hw-fXY" firstAttribute="centerY" secondItem="U6E-Cr-sn3" secondAttribute="centerY" id="zfl-Jz-a7o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vzH-4J-xC6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJH-lB-AgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5675" y="-527"/>
         </scene>
     </scenes>
     <resources>
@@ -1351,8 +1419,10 @@ Try again</string>
         <image name="Ticket Status" width="414" height="736"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="agw-TY-hjX"/>
         <segue reference="2Md-NV-kED"/>
-        <segue reference="73X-WS-177"/>
+        <segue reference="H5o-u0-OiV"/>
+        <segue reference="JuQ-a4-mo2"/>
         <segue reference="QZx-p8-5sq"/>
         <segue reference="f5V-rC-0tB"/>
         <segue reference="j2O-wB-Dfs"/>

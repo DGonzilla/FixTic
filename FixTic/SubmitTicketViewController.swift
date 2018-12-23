@@ -22,9 +22,9 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
         //*** Verifies if following fields contain inputs
         if (self.selectedTicketCategory == "" || self.selectedTicketCategory == "Please Select Category" || self.studentTicketNotes.text! == "Hello, I’m currently locked out (application name). Please assist in unlocking my account..."){
             
-            print("Conditions were met\n", selectedTicketCategory, self.studentTicketNotes.text!)
+            print("Conditions weren't met\n", selectedTicketCategory, self.studentTicketNotes.text!)
             //*** Segue to error screen if conditions aren't met
-            //self.performSegue(withIdentifier: "SignUpErrorViewSegue", sender: self)
+            self.performSegue(withIdentifier: "StudentSubmitTicketError", sender: self)
         }
             
         else{
@@ -48,8 +48,8 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
             // Writes info to database
             db.collection("fix_tickets").document().setData(dictionary)
 
-           
-       
+           // Segues to Student Confirmation View
+            self.performSegue(withIdentifier: "StudentConfirmationViewSegue", sender: self)
         }
         
         
@@ -118,7 +118,8 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
     
     
     
-    // Sends SubmitTicketViewController the user's information
+    // Sends SubmitTicketViewController, StudentTicketSubmittedReturnToStudentMainView, or
+    // StudentFixTicErrorViewController the user's information depending on thier selection
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "ReturnToStudentMenuView" {
@@ -129,6 +130,25 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
             studentMainViewController.userFirstName = userFirstName
             studentMainViewController.userLastName = userLastName
             studentMainViewController.userType = userType
+        }
+        
+        else if segue.identifier == "StudentConfirmationViewSegue" {
+            
+            
+            let studentConfirmationViewController = segue.destination as! StudentConfirmationViewController
+            studentConfirmationViewController.userEmail = userEmail
+            studentConfirmationViewController.userFirstName = userFirstName
+            studentConfirmationViewController.userLastName = userLastName
+            studentConfirmationViewController.userType = userType
+        }
+        else if segue.identifier == "StudentSubmitTicketError" {
+            
+            
+            let studentFixTicErrorViewController = segue.destination as! StudentFixTicErrorViewController
+            studentFixTicErrorViewController.userEmail = userEmail
+            studentFixTicErrorViewController.userFirstName = userFirstName
+            studentFixTicErrorViewController.userLastName = userLastName
+            studentFixTicErrorViewController.userType = userType
         }
     }
     
