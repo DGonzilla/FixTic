@@ -715,7 +715,6 @@ Try again</string>
                                 </state>
                                 <connections>
                                     <action selector="studentTicketSubmit:" destination="ETQ-Qc-Svp" eventType="touchUpInside" id="KkI-hm-ZBi"/>
-                                    <segue destination="yXO-CR-5xJ" kind="showDetail" identifier="StudentConfirmationViewSegue" id="KaS-qf-MN8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -753,7 +752,8 @@ Try again</string>
                     <connections>
                         <outlet property="studentTicketCategory" destination="rMH-62-9wn" id="kKb-yv-s1H"/>
                         <outlet property="studentTicketNotes" destination="Urw-fS-iZm" id="2rT-X5-Pn2"/>
-                        <segue destination="zhi-su-SJK" kind="showDetail" identifier="StudentSubmitTicketError" id="agw-TY-hjX"/>
+                        <segue destination="yXO-CR-5xJ" kind="showDetail" identifier="StudentConfirmationViewSegue" id="zAl-wP-L1c"/>
+                        <segue destination="zhi-su-SJK" kind="showDetail" identifier="StudentSubmitTicketError" id="6Zo-42-0W3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAp-bx-m6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1335,10 +1335,10 @@ Try again</string>
             </objects>
             <point key="canvasLocation" x="6135" y="-1221"/>
         </scene>
-        <!--Submit FixTic Error View Controller Scene-->
+        <!--Student FixTic Error View Controller-->
         <scene sceneID="A5X-K4-ZxU">
             <objects>
-                <viewController storyboardIdentifier="StudentFixTicErrorViewController" modalTransitionStyle="crossDissolve" id="zhi-su-SJK" userLabel="Submit FixTic Error View Controller Scene" customClass="StudentFixTicErrorViewController" customModule="FixTic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentFixTicErrorViewController" modalTransitionStyle="crossDissolve" id="zhi-su-SJK" userLabel="Student FixTic Error View Controller" customClass="StudentFixTicErrorViewController" customModule="FixTic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U6E-Cr-sn3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1419,7 +1419,7 @@ Try again</string>
         <image name="Ticket Status" width="414" height="736"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="agw-TY-hjX"/>
+        <segue reference="6Zo-42-0W3"/>
         <segue reference="2Md-NV-kED"/>
         <segue reference="H5o-u0-OiV"/>
         <segue reference="JuQ-a4-mo2"/>

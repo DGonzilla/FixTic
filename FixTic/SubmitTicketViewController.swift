@@ -131,6 +131,16 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
             studentMainViewController.userLastName = userLastName
             studentMainViewController.userType = userType
         }
+            
+        else if segue.identifier == "StudentSubmitTicketError" {
+            
+            
+            let studentFixTicErrorViewController = segue.destination as! StudentFixTicErrorViewController
+            studentFixTicErrorViewController.userEmail = userEmail
+            studentFixTicErrorViewController.userFirstName = userFirstName
+            studentFixTicErrorViewController.userLastName = userLastName
+            studentFixTicErrorViewController.userType = userType
+        }
         
         else if segue.identifier == "StudentConfirmationViewSegue" {
             
@@ -141,15 +151,7 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
             studentConfirmationViewController.userLastName = userLastName
             studentConfirmationViewController.userType = userType
         }
-        else if segue.identifier == "StudentSubmitTicketError" {
-            
-            
-            let studentFixTicErrorViewController = segue.destination as! StudentFixTicErrorViewController
-            studentFixTicErrorViewController.userEmail = userEmail
-            studentFixTicErrorViewController.userFirstName = userFirstName
-            studentFixTicErrorViewController.userLastName = userLastName
-            studentFixTicErrorViewController.userType = userType
-        }
+
     }
     
     
