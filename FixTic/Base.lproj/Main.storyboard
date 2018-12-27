@@ -586,7 +586,7 @@ Try again</string>
                                 </state>
                                 <connections>
                                     <action selector="checkStatusButton:" destination="fnh-d8-NsB" eventType="touchUpInside" id="RcP-Rl-Zgn"/>
-                                    <segue destination="op2-xK-OIy" kind="showDetail" id="2Md-NV-kED"/>
+                                    <segue destination="op2-xK-OIy" kind="showDetail" identifier="StudentCheckStatusSegue" id="2Md-NV-kED"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d1-pL-Rg9">
@@ -885,7 +885,7 @@ Try again</string>
         <!--Check Status View Controller-->
         <scene sceneID="LqP-TN-kmq">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="op2-xK-OIy" userLabel="Check Status View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckStatusViewController" modalTransitionStyle="crossDissolve" id="op2-xK-OIy" userLabel="Check Status View Controller" customClass="CheckStatusViewController" customModule="FixTic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ibi-Pz-mgg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -918,7 +918,7 @@ Try again</string>
                                 </constraints>
                                 <state key="normal" image="Arrow"/>
                                 <connections>
-                                    <segue destination="fnh-d8-NsB" kind="showDetail" id="z5H-4f-JKD"/>
+                                    <action selector="returnToStudentMain:" destination="op2-xK-OIy" eventType="touchUpInside" id="mW7-lQ-S1c"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -938,6 +938,9 @@ Try again</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gLD-re-dBm"/>
                     </view>
+                    <connections>
+                        <segue destination="fnh-d8-NsB" kind="showDetail" identifier="CheckStatusReturnToStudentMainViewSegue" id="IUQ-As-W4g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2c-B2-Xg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1419,12 +1422,11 @@ Try again</string>
         <image name="Ticket Status" width="414" height="736"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6Zo-42-0W3"/>
         <segue reference="2Md-NV-kED"/>
-        <segue reference="H5o-u0-OiV"/>
-        <segue reference="JuQ-a4-mo2"/>
-        <segue reference="QZx-p8-5sq"/>
-        <segue reference="f5V-rC-0tB"/>
+        <segue reference="ELg-RJ-Bvx"/>
+        <segue reference="37s-ue-bgC"/>
+        <segue reference="IUQ-As-W4g"/>
+        <segue reference="8mK-AE-hPW"/>
         <segue reference="j2O-wB-Dfs"/>
     </inferredMetricsTieBreakers>
 </document>

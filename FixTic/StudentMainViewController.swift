@@ -98,6 +98,16 @@ class StudentMainViewController: UIViewController {
             submitTicketViewController.userType = userType
         }
         
+        if segue.identifier == "StudentCheckStatusSegue" {
+            
+            
+            let checkStatusViewController = segue.destination as! CheckStatusViewController
+            checkStatusViewController.userEmail = userEmail
+            checkStatusViewController.userFirstName = userFirstName
+            checkStatusViewController.userLastName = userLastName
+            checkStatusViewController.userType = userType
+        }
+        
     }
     
     
