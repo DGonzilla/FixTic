@@ -13,7 +13,62 @@ import FirebaseFirestore
 
 
 
-class CheckStatusViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+ 
+    
+    @IBOutlet weak var ticketsTableView: UITableView!
+    
+        
+    
+    
+    // Declares variables to be used
+    var userEmail = ""
+    var userFirstName = ""
+    var userLastName = ""
+    var userType = ""
+    
+    
+
+    let data = ["Hardware", "Connectivity", "Password"]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Functions used for tableview ////////////////////////////////////
+    
+    // How many rows populate
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return data.count
+    }
+    
+    // What happens within each cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = ticketsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CheckStatusTableViewCell
+
+        
+        cell?.ticketCategoryLabel.text = data[indexPath.row]
+        return(cell!)
+    }
+
+    // Styling features of cells
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        
+        if editingStyle == .delete{
+            print("Delete")
+        }
+    }
+    ////////////////////////////////////////////////////////////////////
+    
+    
+    
+
     
     
     
@@ -29,18 +84,11 @@ class CheckStatusViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     
     
-    
-    // Declares variables to be used
-    var userEmail = ""
-    var userFirstName = ""
-    var userLastName = ""
-    var userType = ""
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         
         
         
@@ -52,7 +100,8 @@ class CheckStatusViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     
     
-    // Sends StudentMainViewController the user's information
+    
+    // Sends StudentMainViewController the user's information //////////
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "CheckStatusReturnToStudentMainViewSegue" {
@@ -65,8 +114,9 @@ class CheckStatusViewController: UIViewController, UITextFieldDelegate, UITextVi
             studentMainViewController.userType = userType
         }
     }
-    
+    ////////////////////////////////////////////////////////////////////
     
     
 }
+
 

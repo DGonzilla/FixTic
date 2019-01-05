@@ -36,8 +36,7 @@ class StudentMainViewController: UIViewController {
         
         super.viewDidLoad()
         
-        print("Student Main has loaded")
-        print(userFirstName, userLastName, userEmail, userType)
+ 
         
     }
     
@@ -65,7 +64,7 @@ class StudentMainViewController: UIViewController {
                                 
                                 // Sets userFirstNameLabel to the user's first name
                                 self.userFirstNameLabel.text = userFirstName
-                                print(userFirstName, userLastName, userType)
+                                //print(userFirstName, userLastName, userType)
                             }
                         }
                     }
@@ -83,7 +82,6 @@ class StudentMainViewController: UIViewController {
     // Sends SubmitTicketViewController the user's information
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        print("Button pressed to transition to Submit Ticket")
         fetchUserInfo()
 
         
