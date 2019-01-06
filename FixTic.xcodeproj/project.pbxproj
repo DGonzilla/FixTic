@@ -13,6 +13,7 @@
 		C72B413F21CF32010081410E /* StudentFixTicErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B413E21CF32010081410E /* StudentFixTicErrorViewController.swift */; };
 		C72B414321D494710081410E /* CheckStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B414221D494710081410E /* CheckStatusViewController.swift */; };
 		C72B414D21E128CD0081410E /* CheckStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B414C21E128CD0081410E /* CheckStatusTableViewCell.swift */; };
+		C72B414F21E1A95C0081410E /* StudentTicketMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B414E21E1A95C0081410E /* StudentTicketMoreInfoViewController.swift */; };
 		C774C48320FF11F300F24C71 /* SubmitTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C774C48220FF11F200F24C71 /* SubmitTicketViewController.swift */; };
 		C793555D20F18A0E002D8FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793555C20F18A0E002D8FB2 /* AppDelegate.swift */; };
 		C793555F20F18A0E002D8FB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793555E20F18A0E002D8FB2 /* LoginViewController.swift */; };
@@ -34,6 +35,7 @@
 		C72B413E21CF32010081410E /* StudentFixTicErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFixTicErrorViewController.swift; sourceTree = "<group>"; };
 		C72B414221D494710081410E /* CheckStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusViewController.swift; sourceTree = "<group>"; };
 		C72B414C21E128CD0081410E /* CheckStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckStatusTableViewCell.swift; sourceTree = "<group>"; };
+		C72B414E21E1A95C0081410E /* StudentTicketMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTicketMoreInfoViewController.swift; sourceTree = "<group>"; };
 		C774C48220FF11F200F24C71 /* SubmitTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitTicketViewController.swift; sourceTree = "<group>"; };
 		C793555920F18A0E002D8FB2 /* FixTic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixTic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C793555C20F18A0E002D8FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,8 +105,9 @@
 				C774C48220FF11F200F24C71 /* SubmitTicketViewController.swift */,
 				C72B413C21CF28C10081410E /* StudentConfirmationViewController.swift */,
 				C72B413E21CF32010081410E /* StudentFixTicErrorViewController.swift */,
-				C72B414221D494710081410E /* CheckStatusViewController.swift */,
 				C72B414C21E128CD0081410E /* CheckStatusTableViewCell.swift */,
+				C72B414221D494710081410E /* CheckStatusViewController.swift */,
+				C72B414E21E1A95C0081410E /* StudentTicketMoreInfoViewController.swift */,
 				C793556020F18A0E002D8FB2 /* Main.storyboard */,
 				C717152520FAEC9E00437390 /* TechMainViewController.swift */,
 				C793556320F18A16002D8FB2 /* Assets.xcassets */,
@@ -255,6 +258,7 @@
 				C717152420FACA0600437390 /* StudentMainViewController.swift in Sources */,
 				C72B413F21CF32010081410E /* StudentFixTicErrorViewController.swift in Sources */,
 				C793555F20F18A0E002D8FB2 /* LoginViewController.swift in Sources */,
+				C72B414F21E1A95C0081410E /* StudentTicketMoreInfoViewController.swift in Sources */,
 				C793555D20F18A0E002D8FB2 /* AppDelegate.swift in Sources */,
 				C717152620FAEC9E00437390 /* TechMainViewController.swift in Sources */,
 			);

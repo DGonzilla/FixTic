@@ -8,6 +8,15 @@
 
 import UIKit
 
+
+protocol TableViewNew {
+    func onClickCell(index: Int)
+}
+
+
+
+
+
 class CheckStatusTableViewCell: UITableViewCell {
 
     
@@ -15,8 +24,17 @@ class CheckStatusTableViewCell: UITableViewCell {
     @IBOutlet weak var ticketCategoryLabel: UILabel!
     @IBOutlet weak var ticketStatusLabel: UILabel!
     
+    
+    var cellDelegate: TableViewNew?
+    var index: IndexPath?
+    
+    
+    
+    
     @IBAction func ticketMoreInfoArrowButton(_ sender: UIButton) {
         print("More Info Button Pressed :))))")
+        
+        cellDelegate?.onClickCell(index: (index?.row)!)
     }
      
     

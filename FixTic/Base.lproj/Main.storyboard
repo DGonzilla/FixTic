@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="op2-xK-OIy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -930,14 +930,14 @@ Try again</string>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYf-dE-7wp">
-                                                            <rect key="frame" x="135" y="20" width="163" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYf-dE-7wp">
+                                                            <rect key="frame" x="102" y="20" width="238" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZQ-ai-MvS">
-                                                            <rect key="frame" x="168" y="55" width="101" height="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZQ-ai-MvS">
+                                                            <rect key="frame" x="138" y="55" width="171" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -954,14 +954,14 @@ Try again</string>
                                                     <constraints>
                                                         <constraint firstItem="D3D-2d-br7" firstAttribute="leading" secondItem="Q5P-J1-9ZO" secondAttribute="leadingMargin" id="4sy-Sb-ahg"/>
                                                         <constraint firstItem="pYf-dE-7wp" firstAttribute="top" secondItem="Q5P-J1-9ZO" secondAttribute="topMargin" constant="9" id="BAJ-qG-YsD"/>
-                                                        <constraint firstItem="mZQ-ai-MvS" firstAttribute="centerX" secondItem="Q5P-J1-9ZO" secondAttribute="centerX" constant="11.5" id="Kxl-gp-24j"/>
-                                                        <constraint firstItem="mZQ-ai-MvS" firstAttribute="leading" secondItem="D3D-2d-br7" secondAttribute="trailing" constant="74" id="Lfa-To-r6j"/>
+                                                        <constraint firstItem="mZQ-ai-MvS" firstAttribute="centerX" secondItem="Q5P-J1-9ZO" secondAttribute="centerX" constant="16.5" id="Kxl-gp-24j"/>
+                                                        <constraint firstItem="mZQ-ai-MvS" firstAttribute="leading" secondItem="D3D-2d-br7" secondAttribute="trailing" constant="44" id="Lfa-To-r6j"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="mZQ-ai-MvS" secondAttribute="bottom" constant="11" id="OTq-cj-QP8"/>
                                                         <constraint firstItem="D3D-2d-br7" firstAttribute="top" secondItem="Q5P-J1-9ZO" secondAttribute="topMargin" constant="19" id="Uu9-FC-Oxf"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="D3D-2d-br7" secondAttribute="bottom" constant="21" id="X1y-Q2-TED"/>
-                                                        <constraint firstItem="pYf-dE-7wp" firstAttribute="leading" secondItem="D3D-2d-br7" secondAttribute="trailing" constant="41" id="kq8-ih-LXT"/>
+                                                        <constraint firstItem="pYf-dE-7wp" firstAttribute="leading" secondItem="D3D-2d-br7" secondAttribute="trailing" constant="8" id="kq8-ih-LXT"/>
                                                         <constraint firstItem="mZQ-ai-MvS" firstAttribute="top" secondItem="pYf-dE-7wp" secondAttribute="bottom" constant="5" id="rJU-L4-128"/>
-                                                        <constraint firstItem="pYf-dE-7wp" firstAttribute="centerX" secondItem="Q5P-J1-9ZO" secondAttribute="centerX" constant="9.5" id="tIo-Mw-aEc"/>
+                                                        <constraint firstItem="pYf-dE-7wp" firstAttribute="centerX" secondItem="Q5P-J1-9ZO" secondAttribute="centerX" constant="14" id="tIo-Mw-aEc"/>
                                                         <constraint firstItem="mZQ-ai-MvS" firstAttribute="top" secondItem="pYf-dE-7wp" secondAttribute="bottom" constant="5" id="tKo-v6-tYM"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
@@ -1011,6 +1011,7 @@ Try again</string>
                     <connections>
                         <outlet property="ticketsTableView" destination="HO1-7B-zBs" id="RUy-Kq-7Pe"/>
                         <segue destination="fnh-d8-NsB" kind="showDetail" identifier="CheckStatusReturnToStudentMainViewSegue" id="IUQ-As-W4g"/>
+                        <segue destination="A4J-sY-wh8" kind="showDetail" identifier="StudentTicketMoreInfoSegue" id="cxR-yq-O05"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2c-B2-Xg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1183,7 +1184,7 @@ Try again</string>
         <!--Ticket Status View Controller-->
         <scene sceneID="cKs-LV-CE2">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="A4J-sY-wh8" userLabel="Ticket Status View Controller" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="A4J-sY-wh8" userLabel="Ticket Status View Controller" customClass="StudentTicketMoreInfoViewController" customModule="FixTic" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TOm-tF-tZw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1285,7 +1286,8 @@ Try again</string>
                                 </constraints>
                                 <state key="normal" image="Arrow"/>
                                 <connections>
-                                    <segue destination="op2-xK-OIy" kind="showDetail" id="EQT-R8-Ssa"/>
+                                    <action selector="returnToCheckStatus:" destination="A4J-sY-wh8" eventType="touchUpInside" id="Zhk-J6-7zv"/>
+                                    <segue destination="op2-xK-OIy" kind="showDetail" identifier="ReturnToCheckAllTicketsSegue" id="EQT-R8-Ssa"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlh-k3-jbb">
@@ -1330,7 +1332,7 @@ Try again</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQm-se-jD2">
                                 <rect key="frame" x="207" y="425" width="190" height="30"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="01/01/2018">
+                                    <fragment content="Adrien Gonzalez">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="25" name="HelveticaNeue-Light"/>
@@ -1404,6 +1406,13 @@ Try again</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mPX-ZZ-kUd"/>
                     </view>
+                    <connections>
+                        <outlet property="technicianTicketNotes" destination="ycZ-aH-sCF" id="Rwh-L7-zs5"/>
+                        <outlet property="ticketCategoryLabel" destination="Wlh-k3-jbb" id="oh2-gg-I2k"/>
+                        <outlet property="ticketDateLabel" destination="Nvc-kI-PIO" id="2gs-Mt-Jgd"/>
+                        <outlet property="ticketStatusLabel" destination="FKq-fa-sEh" id="Yar-Xe-JZv"/>
+                        <outlet property="ticketTechAssignedLabel" destination="nQm-se-jD2" id="gGw-hg-qre"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lKk-MS-XNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1494,10 +1503,10 @@ Try again</string>
         <image name="Ticket Status" width="414" height="736"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Md-NV-kED"/>
-        <segue reference="H5o-u0-OiV"/>
+        <segue reference="EQT-R8-Ssa"/>
+        <segue reference="ELg-RJ-Bvx"/>
         <segue reference="37s-ue-bgC"/>
-        <segue reference="IUQ-As-W4g"/>
+        <segue reference="rby-hR-6F9"/>
         <segue reference="8mK-AE-hPW"/>
         <segue reference="j2O-wB-Dfs"/>
     </inferredMetricsTieBreakers>
