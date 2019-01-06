@@ -32,12 +32,6 @@ class StudentConfirmationViewController: UIViewController, UITextFieldDelegate, 
     
     
     
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,9 +39,6 @@ class StudentConfirmationViewController: UIViewController, UITextFieldDelegate, 
         
         
     }
-    
-    
-    
     
     
     

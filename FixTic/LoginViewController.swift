@@ -60,7 +60,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         if (account == "Student"){
                             
                             self.performSegue(withIdentifier: "LoginStudentMainViewSegue", sender: self)
-                            
                         }
                         else if (account == "Technician"){
                             

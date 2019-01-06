@@ -28,6 +28,10 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
     var userType = ""
     
     
+    // Declares database
+    let db = Firestore.firestore()
+    
+    
 
     let ticketCategoryDataTest = ["Hardware","Application Issue", "Password Reset", "Email Issue", "Connectivity", "Other"]
     var selectedTicketCategory = ""
@@ -87,7 +91,7 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         
-        
+        print ("CheckStatus loaded with info: ", userFirstName, userLastName, userType, userEmail)
         
         
         

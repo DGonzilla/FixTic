@@ -29,16 +29,27 @@ class StudentMainViewController: UIViewController {
     var userType = ""
     
     
+    
+    
+    
+    
     override func viewDidLoad() {
         
         // Calls function to pull user's info before view loads
         fetchUserInfo()
         
+        
         super.viewDidLoad()
         
- 
+        
+        print("Student Main View loaded: ", userEmail, userFirstName, userLastName, userType)
         
     }
+    
+    
+    
+    
+    
     
     
     
@@ -47,6 +58,7 @@ class StudentMainViewController: UIViewController {
     func fetchUserInfo(){
         // Declares database
         let db = Firestore.firestore()
+        
         // Pulling user information by email address used to log in
         db.collection("users").whereField("Email", isEqualTo: userEmail).getDocuments {
             (snapshot, error) in if error != nil {
@@ -56,15 +68,21 @@ class StudentMainViewController: UIViewController {
                 
                 for document in (snapshot?.documents)! {
                     // Queries user's first name
-                    if let userFirstName = document.data()["First Name"] as? String{
+                    if let userFirstNameFromDatabase = document.data()["First Name"] as? String{
                         // Queries user's last name
-                        if let userLastName = document.data()["Last Name"] as? String{
+                        if let userLastNameFromDatabase = document.data()["Last Name"] as? String{
                             // Queries user's account type
-                            if let userType = document.data()["Account Type"] as? String{
+                            if let userTypeFromDatabase = document.data()["Account Type"] as? String{
                                 
                                 // Sets userFirstNameLabel to the user's first name
-                                self.userFirstNameLabel.text = userFirstName
-                                //print(userFirstName, userLastName, userType)
+                                self.userFirstNameLabel.text = userFirstNameFromDatabase
+                                
+                                // Declares variables from database
+                                self.userFirstName = userFirstNameFromDatabase
+                                self.userLastName = userLastNameFromDatabase
+                                self.userType = userTypeFromDatabase
+                                print("testing: ", self.userFirstName, self.userEmail, self.userLastName, self.userType)
+                                
                             }
                         }
                     }
@@ -77,13 +95,21 @@ class StudentMainViewController: UIViewController {
     
     
     
+
     
     
-    // Sends SubmitTicketViewController the user's information
+    
+    
+    
+    
+    
+    
+    
+    // Sends SubmitTicketViewController or CheckStatusViewController the user's information accordingly
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        fetchUserInfo()
-
+        // Function calling not needed
+        //fetchUserInfo()
         
         
         if segue.identifier == "StudentSubmitTicketViewSegue" {
@@ -97,7 +123,6 @@ class StudentMainViewController: UIViewController {
         }
         
         if segue.identifier == "StudentCheckStatusSegue" {
-            
             
             let checkStatusViewController = segue.destination as! CheckStatusViewController
             checkStatusViewController.userEmail = userEmail

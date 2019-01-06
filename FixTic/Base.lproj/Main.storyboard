@@ -1503,7 +1503,7 @@ Try again</string>
         <image name="Ticket Status" width="414" height="736"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EQT-R8-Ssa"/>
+        <segue reference="2Md-NV-kED"/>
         <segue reference="ELg-RJ-Bvx"/>
         <segue reference="37s-ue-bgC"/>
         <segue reference="rby-hR-6F9"/>
