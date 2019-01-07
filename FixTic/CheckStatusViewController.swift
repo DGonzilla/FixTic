@@ -14,11 +14,11 @@ import FirebaseFirestore
 
 
 class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
- 
     
+    // Declares ticketTableView
     @IBOutlet weak var ticketsTableView: UITableView!
     
-        
+    
     
     
     // Declares variables to be used
@@ -27,27 +27,105 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
     var userLastName = ""
     var userType = ""
     
-    
-    // Declares database
-    let db = Firestore.firestore()
-    
-    
-
-    let ticketCategoryDataTest = ["Hardware","Application Issue", "Password Reset", "Email Issue", "Connectivity", "Other"]
+    var ticketCategoryFromDatabase = [String]()
     var selectedTicketCategory = ""
     
-    let ticketStatusDataTest = ["Completed", "In Progress", "Open", "Completed", "In Progress", "Open"]
-    var selectedTicketStatus = ""
-    
-    let ticketDateDataTest = ["11/10", "11/27", "12/23", "12/29", "01/02", "01/05"]
-    var selectedTicketDate = ""
-    
-    let ticketTechnicianTest = ["Adrien Gonzalez", "Milene Anjos", "Josh Butler", "Adam Bastille", "Chep Rodriguez", "Tony Stark"]
+    var selectedTicketTechnicianFromDatabase = [String]()
     var selectedTicketTechnician = ""
     
-    var selectedTicketTechnicianNotes = "The application has been relaunched and passwords have been reset. You are now able to log in successfully. Please submit another ticket if issue persists."
+    var ticketStatusFromDatabase = [String]()
+    var selectedTicketStatus = ""
+    
+    var ticketDateFromDatabase = [String]()
+    var selectedTicketDate = ""
+    
+    var selectedTicketTechnicianNotesFromDatabase = [String]()
+    var selectedTicketTechnicianNotes = ""
     
     
+    
+    
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+        
+        fetchTicketInfo()
+    }
+    
+    
+    
+    
+    
+    
+    
+    // Function that will fetch ticket data on user whose email was used to log in
+    func fetchTicketInfo(){
+        
+        // Declares database
+        let db = Firestore.firestore()
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+        
+        db.collection("fix_tickets").whereField("Student Username", isEqualTo: userEmail).getDocuments{
+            (snapshot, error) in if error != nil {
+                // prints error if issue arises
+                print(error!)
+            } else {
+                
+                for document in (snapshot?.documents)!{
+                    
+                    /// Queries the categories assigned to student
+                    if let ticketCategoryFromDatabase = document.data()["Category"] as? String{
+                        
+                        // Saves queried categories into an array
+                        self.ticketCategoryFromDatabase.append(ticketCategoryFromDatabase)
+                        
+                        /// Queries the technician assigned to ticket
+                        if let selectedTicketTechnicianFromDatabase = document.data()["Assigned Technician Username"] as? String{
+                            
+                            // Saves queried ticket technician into an array
+                            self.selectedTicketTechnicianFromDatabase.append(selectedTicketTechnicianFromDatabase)
+                            
+                            /// Queries the ticket status assigned to ticket
+                            if let ticketStatusFromDatabase = document.data()["Ticket Status"] as? String{
+                                
+                                // Saves queried ticket statuses into an array
+                                self.ticketStatusFromDatabase.append(ticketStatusFromDatabase)
+                                
+                                /// Queries the date assigned to ticket
+                                if let ticketDateFromDatabase = document.data()["Date Submitted"] as? String{
+                                    
+                                    // Saves queried ticket dates into an array
+                                    self.ticketDateFromDatabase.append(ticketDateFromDatabase)
+                                    
+                                    /// Queries the technician notes assigned to ticket
+                                    if let selectedTicketTechnicianNotesFromDatabase = document.data()["Technician Notes"] as? String{
+                                        
+                                        // Saves queried technician notes into an array
+                                        self.selectedTicketTechnicianNotesFromDatabase.append(selectedTicketTechnicianNotesFromDatabase)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                // Data has been fetched | Reloads tableView to update table data
+                self.ticketsTableView.reloadData()
+            }
+        }
+    }
+    
+    
+    
+   
     
     
     // Functions used for tableview ////////////////////////////////////
@@ -55,80 +133,48 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
     // How many rows populate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return ticketCategoryDataTest.count
+        
+        return ticketCategoryFromDatabase.count
     }
     
     // What happens within each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = ticketsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CheckStatusTableViewCell
-
+        
         cell?.cellDelegate = self
         cell?.index = indexPath
         
-        cell?.ticketCategoryLabel.text = ticketCategoryDataTest[indexPath.row]
-        cell?.ticketStatusLabel.text = ticketStatusDataTest[indexPath.row]
-        cell?.ticketDateLabel.text = ticketDateDataTest[indexPath.row]
-
+        cell?.ticketCategoryLabel.text = ticketCategoryFromDatabase[indexPath.row]
+        cell?.ticketStatusLabel.text = ticketStatusFromDatabase[indexPath.row]
+        cell?.ticketDateLabel.text = ticketDateFromDatabase[indexPath.row]
+        
         return(cell!)
     }
-
-    
-    
-    
-    // Styling features of cells
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
-        
-        if editingStyle == .delete{
-            print("Delete")
-        }
-    }
-    
-    
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        print ("CheckStatus loaded with info: ", userFirstName, userLastName, userType, userEmail)
-        
-        
-        
-        
-    }
-    
-    
-    
-    // Segues back to Student Main View Controller
-    @IBAction func returnToStudentMain(_ sender: UIButton) {
-        
-        performSegue(withIdentifier: "CheckStatusReturnToStudentMainViewSegue", sender: self)
-        
-    }
     
     
     
     
-    // Sends SubmitTicketViewController the user's information
+    
+    // Segues to SubmitTicketViewController with the user's information
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         
         // Sends studentTicketMoreInfoViewController the user's information //////////
         if segue.identifier == "StudentTicketMoreInfoSegue" {
             
             
             let studentTicketMoreInfoViewController = segue.destination as! StudentTicketMoreInfoViewController
-            studentTicketMoreInfoViewController.selectedTicketCategory = selectedTicketCategory
-            studentTicketMoreInfoViewController.selectedTicketStatus = selectedTicketStatus
-            studentTicketMoreInfoViewController.selectedTicketDate = selectedTicketDate
-            studentTicketMoreInfoViewController.selectedTicketTechnician = selectedTicketTechnician
-            studentTicketMoreInfoViewController.selectedTicketTechnicianNotes = selectedTicketTechnicianNotes
-            
             studentTicketMoreInfoViewController.userEmail = userEmail
             studentTicketMoreInfoViewController.userFirstName = userFirstName
             studentTicketMoreInfoViewController.userLastName = userLastName
             studentTicketMoreInfoViewController.userType = userType
+            
+            studentTicketMoreInfoViewController.selectedTicketCategory = selectedTicketCategory
+            studentTicketMoreInfoViewController.selectedTicketDate = selectedTicketDate
+            studentTicketMoreInfoViewController.selectedTicketStatus = selectedTicketStatus
+            studentTicketMoreInfoViewController.selectedTicketTechnician = selectedTicketTechnician
+            studentTicketMoreInfoViewController.selectedTicketTechnicianNotes = selectedTicketTechnicianNotes
         }
         
         // Sends StudentMainViewController the user's information //////////
@@ -142,11 +188,18 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
             studentMainViewController.userType = userType
         }
     }
+    
+    
+    
+    // Segues back to Student Main View Controller
+    @IBAction func returnToStudentMain(_ sender: UIButton) {
         
+        performSegue(withIdentifier: "CheckStatusReturnToStudentMainViewSegue", sender: self)
     }
-    
-    
-    
+}
+
+
+
 
 
 // When more info arrow button is pressed, the following executes
@@ -156,15 +209,14 @@ extension CheckStatusViewController: TableViewNew {
         print("\(index) is clicked")
         
         // Selected data is stored and segues to next View Controller
-        selectedTicketCategory = ticketCategoryDataTest[index]
-        selectedTicketStatus = ticketStatusDataTest[index]
-        selectedTicketDate = ticketDateDataTest[index]
-        selectedTicketTechnician = ticketTechnicianTest[index]
+        selectedTicketCategory = ticketCategoryFromDatabase[index]
+        selectedTicketDate = ticketDateFromDatabase[index]
+        selectedTicketStatus = ticketStatusFromDatabase[index]
+        selectedTicketTechnician = selectedTicketTechnicianFromDatabase[index]
+        selectedTicketTechnicianNotes = selectedTicketTechnicianNotesFromDatabase[index]
         
         
         performSegue(withIdentifier: "StudentTicketMoreInfoSegue", sender: self)
-        
     }
-    
-    
 }
+

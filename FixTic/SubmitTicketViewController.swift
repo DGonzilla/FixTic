@@ -158,20 +158,9 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     // Function to grab current date
     func getCurrentDate(){
-        formatter.dateFormat = "MMM d, yyyy"
+        formatter.dateFormat = "MM/dd"
         dateSubmitted = formatter.string(from: date)
     }
     

@@ -41,9 +41,6 @@ class StudentMainViewController: UIViewController {
         
         super.viewDidLoad()
         
-        
-        print("Student Main View loaded: ", userEmail, userFirstName, userLastName, userType)
-        
     }
     
     
@@ -81,8 +78,6 @@ class StudentMainViewController: UIViewController {
                                 self.userFirstName = userFirstNameFromDatabase
                                 self.userLastName = userLastNameFromDatabase
                                 self.userType = userTypeFromDatabase
-                                print("testing: ", self.userFirstName, self.userEmail, self.userLastName, self.userType)
-                                
                             }
                         }
                     }
@@ -95,22 +90,18 @@ class StudentMainViewController: UIViewController {
     
     
     
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
     // Sends SubmitTicketViewController or CheckStatusViewController the user's information accordingly
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        // Function calling not needed
-        //fetchUserInfo()
-        
+
+        if segue.identifier == "StudentCheckStatusSegue" {
+            
+            let checkStatusViewController = segue.destination as! CheckStatusViewController
+            checkStatusViewController.userEmail = userEmail
+            checkStatusViewController.userFirstName = userFirstName
+            checkStatusViewController.userLastName = userLastName
+            checkStatusViewController.userType = userType
+        }
         
         if segue.identifier == "StudentSubmitTicketViewSegue" {
             
@@ -122,14 +113,7 @@ class StudentMainViewController: UIViewController {
             submitTicketViewController.userType = userType
         }
         
-        if segue.identifier == "StudentCheckStatusSegue" {
-            
-            let checkStatusViewController = segue.destination as! CheckStatusViewController
-            checkStatusViewController.userEmail = userEmail
-            checkStatusViewController.userFirstName = userFirstName
-            checkStatusViewController.userLastName = userLastName
-            checkStatusViewController.userType = userType
-        }
+        
         
     }
     
