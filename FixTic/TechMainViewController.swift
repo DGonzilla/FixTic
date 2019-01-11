@@ -95,15 +95,15 @@ class TechMainViewController: UIViewController {
             runReportViewController.userType = userType
         }
         
-//        if segue.identifier == "TechViewTicketsSegue" {
-//
-//
-//            let submitTicketViewController = segue.destination as! SubmitTicketViewController
-//            submitTicketViewController.techUserEmail = techUserEmail
-//            submitTicketViewController.techUserFirstName = techUserFirstName
-//            submitTicketViewController.techUserLastName = techUserLastName
-//            submitTicketViewController.userType = userType
-//        }
+        if segue.identifier == "TechViewAllTicketsSegue" {
+
+
+            let viewAllTicketsTechViewController = segue.destination as! ViewAllTicketsTechViewController
+            viewAllTicketsTechViewController.techUserEmail = techUserEmail
+            viewAllTicketsTechViewController.techUserFirstName = techUserFirstName
+            viewAllTicketsTechViewController.techUserLastName = techUserLastName
+            viewAllTicketsTechViewController.userType = userType
+        }
     }
     
     

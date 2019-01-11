@@ -18,6 +18,8 @@
 		C72B415321E7040A0081410E /* RunReportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B415221E7040A0081410E /* RunReportsTableViewCell.swift */; };
 		C72B415521E710ED0081410E /* TechTicketMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B415421E710ED0081410E /* TechTicketMoreInfoViewController.swift */; };
 		C72B415721E71E0D0081410E /* TechConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B415621E71E0D0081410E /* TechConfirmationViewController.swift */; };
+		C72B415921E8E6250081410E /* ViewAllTicketsTechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B415821E8E6250081410E /* ViewAllTicketsTechViewController.swift */; };
+		C72B415B21E8ED5C0081410E /* ViewAllTicketsTechTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B415A21E8ED5C0081410E /* ViewAllTicketsTechTableViewCell.swift */; };
 		C774C48320FF11F300F24C71 /* SubmitTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C774C48220FF11F200F24C71 /* SubmitTicketViewController.swift */; };
 		C793555D20F18A0E002D8FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793555C20F18A0E002D8FB2 /* AppDelegate.swift */; };
 		C793555F20F18A0E002D8FB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793555E20F18A0E002D8FB2 /* LoginViewController.swift */; };
@@ -44,6 +46,8 @@
 		C72B415221E7040A0081410E /* RunReportsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunReportsTableViewCell.swift; sourceTree = "<group>"; };
 		C72B415421E710ED0081410E /* TechTicketMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTicketMoreInfoViewController.swift; sourceTree = "<group>"; };
 		C72B415621E71E0D0081410E /* TechConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechConfirmationViewController.swift; sourceTree = "<group>"; };
+		C72B415821E8E6250081410E /* ViewAllTicketsTechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllTicketsTechViewController.swift; sourceTree = "<group>"; };
+		C72B415A21E8ED5C0081410E /* ViewAllTicketsTechTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllTicketsTechTableViewCell.swift; sourceTree = "<group>"; };
 		C774C48220FF11F200F24C71 /* SubmitTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitTicketViewController.swift; sourceTree = "<group>"; };
 		C793555920F18A0E002D8FB2 /* FixTic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixTic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C793555C20F18A0E002D8FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				C72B415021E6FFFC0081410E /* RunReportViewController.swift */,
 				C72B415421E710ED0081410E /* TechTicketMoreInfoViewController.swift */,
 				C72B415621E71E0D0081410E /* TechConfirmationViewController.swift */,
+				C72B415A21E8ED5C0081410E /* ViewAllTicketsTechTableViewCell.swift */,
+				C72B415821E8E6250081410E /* ViewAllTicketsTechViewController.swift */,
 				C793556320F18A16002D8FB2 /* Assets.xcassets */,
 				C793556520F18A16002D8FB2 /* LaunchScreen.storyboard */,
 				C7D1E24621C59D7E0090B535 /* GoogleService-Info.plist */,
@@ -274,9 +280,11 @@
 				C72B415121E6FFFC0081410E /* RunReportViewController.swift in Sources */,
 				C72B415721E71E0D0081410E /* TechConfirmationViewController.swift in Sources */,
 				C72B414F21E1A95C0081410E /* StudentTicketMoreInfoViewController.swift in Sources */,
+				C72B415B21E8ED5C0081410E /* ViewAllTicketsTechTableViewCell.swift in Sources */,
 				C793555D20F18A0E002D8FB2 /* AppDelegate.swift in Sources */,
 				C72B415321E7040A0081410E /* RunReportsTableViewCell.swift in Sources */,
 				C717152620FAEC9E00437390 /* TechMainViewController.swift in Sources */,
+				C72B415921E8E6250081410E /* ViewAllTicketsTechViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
