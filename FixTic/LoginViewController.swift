@@ -90,9 +90,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //*** Simple print statement to ensure screen loaded
-        print("Login Screen has loaded :)")
-        
         self.userEmailField.delegate = self
         self.userPasswordField.delegate = self
         
@@ -111,7 +108,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    // Sends StudentMainViewController the user's email address
+    // Sends StudentMainViewController or TechMainViewController the user's email address
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "LoginStudentMainViewSegue" {
@@ -119,8 +116,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let studentMainViewController = segue.destination as! StudentMainViewController
             studentMainViewController.userEmail = userEmailField.text!
         }
+        
+        else if (segue.identifier == "LoginTechMainViewSegue") {
+            
+            let techMainViewController = segue.destination as! TechMainViewController
+            techMainViewController.techUserEmail = userEmailField.text!
+        }
 
     }
+    
+    
     
     
     

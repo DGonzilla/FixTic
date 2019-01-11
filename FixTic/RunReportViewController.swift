@@ -1,8 +1,8 @@
 //
-//  CheckStatusViewController.swift
+//  RunReportViewController.swift
 //  FixTic
 //
-//  Created by David Adrien Gonzalez on 12/27/18.
+//  Created by David Adrien Gonzalez on 01/09/19.
 //  Copyright © 2018 David Adrien Gonzalez. All rights reserved.
 //
 
@@ -13,15 +13,20 @@ import FirebaseFirestore
 
 
 
-class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RunReportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // Declares ticketsTableView
-    @IBOutlet weak var ticketsTableView: UITableView!
+    // Declares openTicketsTableView
+    @IBOutlet weak var openTicketsTableView: UITableView!
+    
     
     
     
     
     // Declares variables to be used
+    var techUserEmail = ""
+    var techUserFirstName = ""
+    var techUserLastName = ""
+    
     var userEmail = ""
     var userFirstName = ""
     var userLastName = ""
@@ -39,8 +44,11 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
     var ticketDateFromDatabase = [String]()
     var selectedTicketDate = ""
     
-    var selectedTicketTechnicianNotesFromDatabase = [String]()
-    var selectedTicketTechnicianNotes = ""
+    var selectedTicketStudentNotesFromDatabase = [String]()
+    var selectedTicketStudentNotes = ""
+    
+    var selectedTicketDocIdFromDatabase = [String]()
+    var selectedTicketDocId = ""
     
     
     
@@ -73,7 +81,7 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
         
-        db.collection("fix_tickets").whereField("Student Username", isEqualTo: userEmail).getDocuments{
+        db.collection("fix_tickets").whereField("Ticket Status", isEqualTo: "Open").getDocuments{
             (snapshot, error) in if error != nil {
                 // prints error if issue arises
                 print(error!)
@@ -81,35 +89,45 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 for document in (snapshot?.documents)!{
                     
-                    /// Queries the categories assigned to student
+                    
+                    ///// Queries the categories assigned to student
                     if let ticketCategoryFromDatabase = document.data()["Category"] as? String{
                         
                         // Saves queried categories into an array
                         self.ticketCategoryFromDatabase.append(ticketCategoryFromDatabase)
                         
-                        /// Queries the technician assigned to ticket
+                        ///// Queries the technician assigned to ticket
                         if let selectedTicketTechnicianFromDatabase = document.data()["Assigned Technician Name"] as? String{
                             
                             // Saves queried ticket technician into an array
                             self.selectedTicketTechnicianFromDatabase.append(selectedTicketTechnicianFromDatabase)
                             
-                            /// Queries the ticket status assigned to ticket
+                            ///// Queries the ticket status assigned to ticket
                             if let ticketStatusFromDatabase = document.data()["Ticket Status"] as? String{
                                 
                                 // Saves queried ticket statuses into an array
                                 self.ticketStatusFromDatabase.append(ticketStatusFromDatabase)
                                 
-                                /// Queries the date assigned to ticket
+                                ///// Queries the date assigned to ticket
                                 if let ticketDateFromDatabase = document.data()["Date Submitted"] as? String{
                                     
                                     // Saves queried ticket dates into an array
                                     self.ticketDateFromDatabase.append(ticketDateFromDatabase)
                                     
-                                    /// Queries the technician notes assigned to ticket
-                                    if let selectedTicketTechnicianNotesFromDatabase = document.data()["Technician Notes"] as? String{
+                                    ///// Queries the student notes assigned to ticket
+                                    if let selectedTicketStudentNotesFromDatabase = document.data()["Description"] as? String{
                                         
                                         // Saves queried technician notes into an array
-                                        self.selectedTicketTechnicianNotesFromDatabase.append(selectedTicketTechnicianNotesFromDatabase)
+                                        self.selectedTicketStudentNotesFromDatabase.append(selectedTicketStudentNotesFromDatabase)
+                                        
+                                        
+                                        ///// Queries the document Id assigned to ticket
+                                        if let selectedTicketDocIdFromDatabase = document.documentID as? String {
+                                            
+                                            // Saves queried doc ID into an array
+                                            self.selectedTicketDocIdFromDatabase.append(selectedTicketDocIdFromDatabase)
+      
+                                        }
                                     }
                                 }
                             }
@@ -118,14 +136,14 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
                 }
                 
                 // Data has been fetched | Reloads tableView to update table data
-                self.ticketsTableView.reloadData()
+                self.openTicketsTableView.reloadData()
             }
         }
     }
     
     
     
-   
+    
     
     
     // Functions used for tableview ////////////////////////////////////
@@ -140,7 +158,7 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
     // What happens within each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = ticketsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CheckStatusTableViewCell
+        let cell = openTicketsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? RunReportsTableViewCell
         
         cell?.cellDelegate = self
         cell?.index = indexPath
@@ -161,40 +179,53 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
         
         
         // Sends studentTicketMoreInfoViewController the user's information //////////
-        if segue.identifier == "StudentTicketMoreInfoSegue" {
+        if segue.identifier == "TechTicketMoreInfoSegue" {
             
             
-            let studentTicketMoreInfoViewController = segue.destination as! StudentTicketMoreInfoViewController
-            studentTicketMoreInfoViewController.userEmail = userEmail
-            studentTicketMoreInfoViewController.userFirstName = userFirstName
-            studentTicketMoreInfoViewController.userLastName = userLastName
-            studentTicketMoreInfoViewController.userType = userType
+            let techTicketMoreInfoViewController = segue.destination as! TechTicketMoreInfoViewController
+            techTicketMoreInfoViewController.techUserEmail = techUserEmail
+            techTicketMoreInfoViewController.techUserFirstName = techUserFirstName
+            techTicketMoreInfoViewController.techUserLastName = techUserLastName
             
-            studentTicketMoreInfoViewController.selectedTicketCategory = selectedTicketCategory
-            studentTicketMoreInfoViewController.selectedTicketDate = selectedTicketDate
-            studentTicketMoreInfoViewController.selectedTicketStatus = selectedTicketStatus
-            studentTicketMoreInfoViewController.selectedTicketTechnician = selectedTicketTechnician
-            studentTicketMoreInfoViewController.selectedTicketTechnicianNotes = selectedTicketTechnicianNotes
+            techTicketMoreInfoViewController.userEmail = userEmail
+            techTicketMoreInfoViewController.userFirstName = userFirstName
+            techTicketMoreInfoViewController.userLastName = userLastName
+            techTicketMoreInfoViewController.userType = userType
+            
+            techTicketMoreInfoViewController.selectedTicketCategory = selectedTicketCategory
+            techTicketMoreInfoViewController.selectedTicketDate = selectedTicketDate
+            techTicketMoreInfoViewController.selectedTicketStatus = selectedTicketStatus
+            techTicketMoreInfoViewController.selectedTicketTechnician = selectedTicketTechnician
+            techTicketMoreInfoViewController.selectedTicketStudentNotes = selectedTicketStudentNotes
+            techTicketMoreInfoViewController.selectedTicketDocId = selectedTicketDocId
         }
         
-        // Sends StudentMainViewController the user's information //////////
-        if segue.identifier == "CheckStatusReturnToStudentMainViewSegue" {
+        // Sends TechMainViewController the user's information //////////
+        if segue.identifier == "RunReportReturnToTechMainViewSegue" {
             
             
-            let studentMainViewController = segue.destination as! StudentMainViewController
-            studentMainViewController.userEmail = userEmail
-            studentMainViewController.userFirstName = userFirstName
-            studentMainViewController.userLastName = userLastName
-            studentMainViewController.userType = userType
+            let techMainViewController = segue.destination as! TechMainViewController
+            techMainViewController.techUserEmail = techUserEmail
+            techMainViewController.techUserFirstName = techUserFirstName
+            techMainViewController.techUserLastName = techUserLastName
+            techMainViewController.userType = userType
         }
+        
     }
     
     
     
-    // Segues back to Student Main View Controller
-    @IBAction func returnToStudentMain(_ sender: UIButton) {
+    
+    
+    
+    
+    
+    
+    
+    // Segues back to Tech Main View Controller
+    @IBAction func returnToTechMain(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "CheckStatusReturnToStudentMainViewSegue", sender: self)
+        performSegue(withIdentifier: "RunReportReturnToTechMainViewSegue", sender: self)
     }
 }
 
@@ -203,20 +234,24 @@ class CheckStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
 
 // When more info arrow button is pressed, the following executes
-extension CheckStatusViewController: TableViewNew {
+extension RunReportViewController: TableTechViewNew {
     
     func onClickCell(index: Int) {
         print("\(index) is clicked")
+        print("So far so good!!")
         
         // Selected data is stored and segues to next View Controller
         selectedTicketCategory = ticketCategoryFromDatabase[index]
         selectedTicketDate = ticketDateFromDatabase[index]
         selectedTicketStatus = ticketStatusFromDatabase[index]
-        selectedTicketTechnician = selectedTicketTechnicianFromDatabase[index]
-        selectedTicketTechnicianNotes = selectedTicketTechnicianNotesFromDatabase[index]
+        selectedTicketTechnician = "Open"
+        selectedTicketStudentNotes = selectedTicketStudentNotesFromDatabase[index]
+        selectedTicketDocId = selectedTicketDocIdFromDatabase[index]
         
         
-        performSegue(withIdentifier: "StudentTicketMoreInfoSegue", sender: self)
+        
+        
+        performSegue(withIdentifier: "TechTicketMoreInfoSegue", sender: self)
     }
 }
 

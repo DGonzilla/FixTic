@@ -208,7 +208,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         else if (segue.identifier == "TechMainViewSegue") {
             
             let techMainViewController = segue.destination as! TechMainViewController
-            techMainViewController.userFirstName = userFirstNameField.text!
+            techMainViewController.techUserFirstName = userFirstNameField.text!
+            techMainViewController.techUserLastName = userLastNameField.text!
+            techMainViewController.techUserEmail = userEmailField.text!
+            techMainViewController.userType = userTypeField.text!
         }
     }
     

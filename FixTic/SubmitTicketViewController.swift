@@ -38,7 +38,7 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
             db.settings = settings
             
             
-            let dictionary : [String : Any] = ["Assigned Technician Username" : "Not Assigned",
+            let dictionary : [String : Any] = ["Assigned Technician Name" : "Not Assigned",
                                                "Category" : self.selectedTicketCategory,
                                                "Date Submitted" : self.dateSubmitted,
                                                "Description" : self.self.studentTicketNotes.text!,
