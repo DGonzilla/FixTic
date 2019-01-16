@@ -64,7 +64,8 @@ class TechTicketMoreInfoViewController: UIViewController {
     
     @IBAction func fixIssue(_ sender: UIButton) {
         
-        
+        print("Confirming tech name is stored")
+        print(techUserFirstName, techUserLastName)
         
         // Declares database
         let db = Firestore.firestore()
@@ -80,20 +81,6 @@ class TechTicketMoreInfoViewController: UIViewController {
         
         performSegue(withIdentifier: "TechConfirmationSegue", sender: self)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C707CE2F21EBD4090015E8C2 /* ViewAllTicketsTechMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707CE2E21EBD4090015E8C2 /* ViewAllTicketsTechMoreInfoViewController.swift */; };
+		C707CE3121EC31A20015E8C2 /* TechModifiedTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707CE3021EC31A20015E8C2 /* TechModifiedTicketViewController.swift */; };
+		C707CE3721EC32270015E8C2 /* TechModifiedTicketErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707CE3621EC32270015E8C2 /* TechModifiedTicketErrorViewController.swift */; };
 		C717152420FACA0600437390 /* StudentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C717152320FACA0500437390 /* StudentMainViewController.swift */; };
 		C717152620FAEC9E00437390 /* TechMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C717152520FAEC9E00437390 /* TechMainViewController.swift */; };
 		C72B413D21CF28C10081410E /* StudentConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B413C21CF28C10081410E /* StudentConfirmationViewController.swift */; };
@@ -35,6 +38,9 @@
 		031766C785A44D4E95462BB5 /* Pods-FixTic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixTic.release.xcconfig"; path = "Pods/Target Support Files/Pods-FixTic/Pods-FixTic.release.xcconfig"; sourceTree = "<group>"; };
 		3326D82805A370626B14B12F /* Pods-FixTic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixTic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FixTic/Pods-FixTic.debug.xcconfig"; sourceTree = "<group>"; };
 		B6058C79396FDEE67BD56358 /* Pods_FixTic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixTic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C707CE2E21EBD4090015E8C2 /* ViewAllTicketsTechMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllTicketsTechMoreInfoViewController.swift; sourceTree = "<group>"; };
+		C707CE3021EC31A20015E8C2 /* TechModifiedTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechModifiedTicketViewController.swift; sourceTree = "<group>"; };
+		C707CE3621EC32270015E8C2 /* TechModifiedTicketErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechModifiedTicketErrorViewController.swift; sourceTree = "<group>"; };
 		C717152320FACA0500437390 /* StudentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMainViewController.swift; sourceTree = "<group>"; };
 		C717152520FAEC9E00437390 /* TechMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechMainViewController.swift; sourceTree = "<group>"; };
 		C72B413C21CF28C10081410E /* StudentConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +134,9 @@
 				C72B415621E71E0D0081410E /* TechConfirmationViewController.swift */,
 				C72B415A21E8ED5C0081410E /* ViewAllTicketsTechTableViewCell.swift */,
 				C72B415821E8E6250081410E /* ViewAllTicketsTechViewController.swift */,
+				C707CE2E21EBD4090015E8C2 /* ViewAllTicketsTechMoreInfoViewController.swift */,
+				C707CE3021EC31A20015E8C2 /* TechModifiedTicketViewController.swift */,
+				C707CE3621EC32270015E8C2 /* TechModifiedTicketErrorViewController.swift */,
 				C793556320F18A16002D8FB2 /* Assets.xcassets */,
 				C793556520F18A16002D8FB2 /* LaunchScreen.storyboard */,
 				C7D1E24621C59D7E0090B535 /* GoogleService-Info.plist */,
@@ -268,12 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C707CE2F21EBD4090015E8C2 /* ViewAllTicketsTechMoreInfoViewController.swift in Sources */,
 				C774C48320FF11F300F24C71 /* SubmitTicketViewController.swift in Sources */,
 				C72B415521E710ED0081410E /* TechTicketMoreInfoViewController.swift in Sources */,
 				C72B414321D494710081410E /* CheckStatusViewController.swift in Sources */,
 				C72B413D21CF28C10081410E /* StudentConfirmationViewController.swift in Sources */,
 				C72B414D21E128CD0081410E /* CheckStatusTableViewCell.swift in Sources */,
 				C7EEB67C20F2B2B9004AB85D /* SignUpViewController.swift in Sources */,
+				C707CE3121EC31A20015E8C2 /* TechModifiedTicketViewController.swift in Sources */,
 				C717152420FACA0600437390 /* StudentMainViewController.swift in Sources */,
 				C72B413F21CF32010081410E /* StudentFixTicErrorViewController.swift in Sources */,
 				C793555F20F18A0E002D8FB2 /* LoginViewController.swift in Sources */,
@@ -282,6 +293,7 @@
 				C72B414F21E1A95C0081410E /* StudentTicketMoreInfoViewController.swift in Sources */,
 				C72B415B21E8ED5C0081410E /* ViewAllTicketsTechTableViewCell.swift in Sources */,
 				C793555D20F18A0E002D8FB2 /* AppDelegate.swift in Sources */,
+				C707CE3721EC32270015E8C2 /* TechModifiedTicketErrorViewController.swift in Sources */,
 				C72B415321E7040A0081410E /* RunReportsTableViewCell.swift in Sources */,
 				C717152620FAEC9E00437390 /* TechMainViewController.swift in Sources */,
 				C72B415921E8E6250081410E /* ViewAllTicketsTechViewController.swift in Sources */,

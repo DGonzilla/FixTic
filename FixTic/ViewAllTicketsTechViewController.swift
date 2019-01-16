@@ -84,7 +84,71 @@ class ViewAllTicketsTechViewController: UIViewController, UITableViewDelegate, U
         db.settings = settings
         
         
+        // Queries collection with In Progress Ticket Statuses
         db.collection("fix_tickets").whereField("Ticket Status", isEqualTo: "In Progress").getDocuments{
+            (snapshot, error) in if error != nil {
+                // prints error if issue arises
+                print(error!)
+                
+            } else {
+                
+                for document in (snapshot?.documents)!{
+                    
+                    
+                    ///// Queries the categories assigned to student
+                    if let ticketCategoryFromDatabase = document.data()["Category"] as? String{
+                        
+                        // Saves queried categories into an array
+                        self.ticketCategoryFromDatabase.append(ticketCategoryFromDatabase)
+                        
+                        ///// Queries the technician assigned to ticket
+                        if let selectedTicketTechnicianFromDatabase = document.data()["Assigned Technician Name"] as? String{
+                            
+                            // Saves queried ticket technician into an array
+                            self.selectedTicketTechnicianFromDatabase.append(selectedTicketTechnicianFromDatabase)
+                            
+                            ///// Queries the ticket status assigned to ticket
+                            if let ticketStatusFromDatabase = document.data()["Ticket Status"] as? String{
+                                
+                                // Saves queried ticket statuses into an array
+                                self.ticketStatusFromDatabase.append(ticketStatusFromDatabase)
+                                
+                                ///// Queries the date assigned to ticket
+                                if let ticketDateFromDatabase = document.data()["Date Submitted"] as? String{
+                                    
+                                    // Saves queried ticket dates into an array
+                                    self.ticketDateFromDatabase.append(ticketDateFromDatabase)
+                                    
+                                    ///// Queries the student notes assigned to ticket
+                                    if let selectedTicketStudentNotesFromDatabase = document.data()["Description"] as? String{
+                                        
+                                        // Saves queried technician notes into an array
+                                        self.selectedTicketStudentNotesFromDatabase.append(selectedTicketStudentNotesFromDatabase)
+                                        
+                                        
+                                        ///// Queries the document Id assigned to ticket
+                                        if let selectedTicketDocIdFromDatabase = document.documentID as? String {
+                                            
+                                            // Saves queried doc ID into an array
+                                            self.selectedTicketDocIdFromDatabase.append(selectedTicketDocIdFromDatabase)
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                // Data has been fetched | Reloads tableView to update table data
+                self.viewAllTicketsTableView.reloadData()
+            }
+        }
+        
+        
+        
+        // Queries collection with Completed Ticket Statuses
+        db.collection("fix_tickets").whereField("Ticket Status", isEqualTo: "Completed").getDocuments{
             (snapshot, error) in if error != nil {
                 // prints error if issue arises
                 print(error!)
@@ -142,6 +206,22 @@ class ViewAllTicketsTechViewController: UIViewController, UITableViewDelegate, U
                 self.viewAllTicketsTableView.reloadData()
             }
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     
@@ -182,25 +262,25 @@ class ViewAllTicketsTechViewController: UIViewController, UITableViewDelegate, U
         
         
         // Sends studentTicketMoreInfoViewController the user's information //////////
-        if segue.identifier == "TechTicketMoreInfoSegue" {
+        if segue.identifier == "TechViewAllTicketsMoreInfoSegue" {
             
             
-            let techTicketMoreInfoViewController = segue.destination as! TechTicketMoreInfoViewController
-            techTicketMoreInfoViewController.techUserEmail = techUserEmail
-            techTicketMoreInfoViewController.techUserFirstName = techUserFirstName
-            techTicketMoreInfoViewController.techUserLastName = techUserLastName
+            let viewAllTicketsTechMoreInfoViewController = segue.destination as! ViewAllTicketsTechMoreInfoViewController
+            viewAllTicketsTechMoreInfoViewController.techUserEmail = techUserEmail
+            viewAllTicketsTechMoreInfoViewController.techUserFirstName = techUserFirstName
+            viewAllTicketsTechMoreInfoViewController.techUserLastName = techUserLastName
             
-            techTicketMoreInfoViewController.userEmail = userEmail
-            techTicketMoreInfoViewController.userFirstName = userFirstName
-            techTicketMoreInfoViewController.userLastName = userLastName
-            techTicketMoreInfoViewController.userType = userType
+            viewAllTicketsTechMoreInfoViewController.userEmail = userEmail
+            viewAllTicketsTechMoreInfoViewController.userFirstName = userFirstName
+            viewAllTicketsTechMoreInfoViewController.userLastName = userLastName
+            viewAllTicketsTechMoreInfoViewController.userType = userType
             
-            techTicketMoreInfoViewController.selectedTicketCategory = selectedTicketCategory
-            techTicketMoreInfoViewController.selectedTicketDate = selectedTicketDate
-            techTicketMoreInfoViewController.selectedTicketStatus = selectedTicketStatus
-            techTicketMoreInfoViewController.selectedTicketTechnician = selectedTicketTechnician
-            techTicketMoreInfoViewController.selectedTicketStudentNotes = selectedTicketStudentNotes
-            techTicketMoreInfoViewController.selectedTicketDocId = selectedTicketDocId
+            viewAllTicketsTechMoreInfoViewController.selectedTicketCategory = selectedTicketCategory
+            viewAllTicketsTechMoreInfoViewController.selectedTicketDate = selectedTicketDate
+            viewAllTicketsTechMoreInfoViewController.selectedTicketStatus = selectedTicketStatus
+            viewAllTicketsTechMoreInfoViewController.selectedTicketTechnician = selectedTicketTechnician
+            viewAllTicketsTechMoreInfoViewController.selectedTicketStudentNotes = selectedTicketStudentNotes
+            viewAllTicketsTechMoreInfoViewController.selectedTicketDocId = selectedTicketDocId
         }
         
         // Sends TechMainViewController the user's information //////////
@@ -239,13 +319,13 @@ class ViewAllTicketsTechViewController: UIViewController, UITableViewDelegate, U
             selectedTicketCategory = ticketCategoryFromDatabase[index]
             selectedTicketDate = ticketDateFromDatabase[index]
             selectedTicketStatus = ticketStatusFromDatabase[index]
-            selectedTicketTechnician = "Open"
+            selectedTicketTechnician = selectedTicketTechnicianFromDatabase[index]
             selectedTicketStudentNotes = selectedTicketStudentNotesFromDatabase[index]
             selectedTicketDocId = selectedTicketDocIdFromDatabase[index]
             
             
             
-            //performSegue(withIdentifier: "TechTicketMoreInfoSegue", sender: self)
+            performSegue(withIdentifier: "TechViewAllTicketsMoreInfoSegue", sender: self)
         }
     
     
