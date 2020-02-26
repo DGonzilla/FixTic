@@ -41,7 +41,7 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
             let dictionary : [String : Any] = ["Assigned Technician Name" : "Not Assigned",
                                                "Category" : self.selectedTicketCategory,
                                                "Date Submitted" : self.dateSubmitted,
-                                               "Description" : self.studentTicketNotes.text!,
+                                               "Description" : self.self.studentTicketNotes.text!,
                                                "Student Username" : self.userEmail,
                                                "Technician Notes" : "A Technician will be assigned shortly",
                                                "Ticket Status" : self.ticketStatus]
@@ -105,6 +105,11 @@ class SubmitTicketViewController: UIViewController, UITextFieldDelegate, UITextV
         
         // Grabs date
         getCurrentDate()
+        
+        
+        // Testing user info to be printed
+        print("Submit Ticket loaded: ", userFirstName, userLastName, userType, userEmail)
+        
         
         
         
